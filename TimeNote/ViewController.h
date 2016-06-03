@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "AddRecordView.h"
+#import "MyCollectionViewLayout.h"
+#import "CollectionViewCell.h"
+#import "MyCell.h"
 
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *text;
 
+@property (weak, nonatomic) IBOutlet UILabel *lonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *latLabel;
 @end
 

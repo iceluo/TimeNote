@@ -1,10 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="EZi-KS-kxj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bg-be-XSb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Item-->
+        <scene sceneID="kcx-Ia-SXm">
+            <objects>
+                <viewController id="6A4-fg-oJE" customClass="AddRecordVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cgU-p2-gvG"/>
+                        <viewControllerLayoutGuide type="bottom" id="sBD-ht-d4G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="D2A-Hh-sxp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="PfC-3d-Iv1"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7c3-uO-tsr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1571.5" y="-1865.5"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="bbA-2e-lpZ">
+            <objects>
+                <viewController id="2bH-TD-OMY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6AM-NO-SkP"/>
+                        <viewControllerLayoutGuide type="bottom" id="iN6-3D-TXE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ijl-7V-tAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="SR5-zn-xuX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ptV-qe-pYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1018" y="-2692"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DYH-Lt-ZXs">
+            <objects>
+                <tabBarController id="8bg-be-XSb" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="uwy-QD-C9B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="6A4-fg-oJE" kind="relationship" relationship="viewControllers" id="R8V-CZ-LdH"/>
+                        <segue destination="2bH-TD-OMY" kind="relationship" relationship="viewControllers" id="6ou-Eu-ao3"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBL-4x-xYb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1449" y="-2547"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="MhM-rS-Trh">
             <objects>
@@ -14,18 +73,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wG4-b1-q2W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hzb-9J-Xn5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-MG-Faa">
-                                <rect key="frame" x="91" y="139" width="30" height="30"/>
-                                <state key="normal" title="记录"/>
-                                <connections>
-                                    <action selector="addRecord:" destination="EZi-KS-kxj" eventType="touchUpInside" id="hTT-cl-sBU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gs8-kW-img">
-                                <rect key="frame" x="91" y="188" width="30" height="30"/>
+                                <rect key="frame" x="181" y="256" width="30" height="30"/>
                                 <state key="normal" title="查看"/>
                                 <connections>
                                     <action selector="checkRecord:" destination="EZi-KS-kxj" eventType="touchUpInside" id="T0d-Dp-htD"/>
@@ -36,17 +88,44 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpe-Mk-WPf">
+                                <rect key="frame" x="20" y="439" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucH-4j-C5f">
+                                <rect key="frame" x="258" y="439" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdi-MG-Faa">
+                                <rect key="frame" x="89" y="262" width="30" height="30"/>
+                                <state key="normal" title="记录"/>
+                                <connections>
+                                    <action selector="addRecord:" destination="EZi-KS-kxj" eventType="touchUpInside" id="hTT-cl-sBU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xpe-Mk-WPf" firstAttribute="leading" secondItem="Hzb-9J-Xn5" secondAttribute="leadingMargin" constant="4" id="19F-yX-3po"/>
+                            <constraint firstItem="xpe-Mk-WPf" firstAttribute="baseline" secondItem="ucH-4j-C5f" secondAttribute="baseline" id="54C-TN-O58"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ucH-4j-C5f" secondAttribute="trailing" constant="4" id="KqJ-R8-qpr"/>
+                            <constraint firstAttribute="bottom" secondItem="xpe-Mk-WPf" secondAttribute="bottom" constant="20" symbolic="YES" id="dxK-V0-7g4"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="latLabel" destination="ucH-4j-C5f" id="BQn-Su-FgV"/>
+                        <outlet property="lonLabel" destination="xpe-Mk-WPf" id="iFH-Yw-cIy"/>
                         <outlet property="text" destination="WRU-Lj-tpN" id="K3L-TO-5cL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2q-Vk-V2r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-587.5" y="-1121.5"/>
+            <point key="canvasLocation" x="-556" y="-2139"/>
         </scene>
     </scenes>
 </document>

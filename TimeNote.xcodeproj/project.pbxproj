@@ -14,6 +14,13 @@
 		C703FCF51CFBE00000C2B5C2 /* UIImage+makePureColorImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C703FCF11CFBE00000C2B5C2 /* UIImage+makePureColorImage.m */; };
 		C703FCF61CFBE00000C2B5C2 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C703FCF31CFBE00000C2B5C2 /* UIView+Extension.m */; };
 		C703FCF91CFBE15300C2B5C2 /* AddRecordOptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C703FCF81CFBE15300C2B5C2 /* AddRecordOptionView.m */; };
+		C703FCFD1CFBF52600C2B5C2 /* MyCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C703FCFC1CFBF52600C2B5C2 /* MyCollectionViewLayout.m */; };
+		C703FD041CFC231C00C2B5C2 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C703FD021CFC231C00C2B5C2 /* CollectionViewCell.m */; };
+		C703FD051CFC231C00C2B5C2 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C703FD031CFC231C00C2B5C2 /* CollectionViewCell.xib */; };
+		C7280E531CFE929300109F78 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7280E521CFE929300109F78 /* MyCell.m */; };
+		C7280E591CFEC3B500109F78 /* AddRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C7280E581CFEC3B500109F78 /* AddRecordVC.m */; };
+		C7280E5D1CFEC93C00109F78 /* AddRecordItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7280E5C1CFEC93C00109F78 /* AddRecordItemView.m */; };
+		C75EDEAA1D012B7400210EF3 /* InsertContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C75EDEA91D012B7400210EF3 /* InsertContentView.m */; };
 		C79522351CD2ECDE0054C780 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C79522341CD2ECDE0054C780 /* main.m */; };
 		C79522381CD2ECDE0054C780 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C79522371CD2ECDE0054C780 /* AppDelegate.m */; };
 		C795223B1CD2ECDE0054C780 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C795223A1CD2ECDE0054C780 /* ViewController.m */; };
@@ -22,8 +29,10 @@
 		C79522431CD2ECDE0054C780 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C79522411CD2ECDE0054C780 /* LaunchScreen.storyboard */; };
 		C795224E1CD2ECDE0054C780 /* TimeNoteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C795224D1CD2ECDE0054C780 /* TimeNoteTests.m */; };
 		C79522591CD2ECDF0054C780 /* TimeNoteUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C79522581CD2ECDF0054C780 /* TimeNoteUITests.m */; };
+		C7ADBCF71CFFE6810042DC40 /* InsertItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ADBCF61CFFE6810042DC40 /* InsertItemView.m */; };
 		C7B23CBE1CFBCA8D00601B1E /* ViewSource.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7B23CBD1CFBCA8D00601B1E /* ViewSource.xib */; };
 		C7B23CC21CFBCB3400601B1E /* AddRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B23CC11CFBCB3400601B1E /* AddRecordView.m */; };
+		C7CC37DC1CFD5DDA0041AAB8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CC37DB1CFD5DDA0041AAB8 /* CoreLocation.framework */; };
 		E1DFEC5A3A3758F6832FF102 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED6C952C6EB9F747754A1AA4 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +68,19 @@
 		C703FCF31CFBE00000C2B5C2 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		C703FCF71CFBE15300C2B5C2 /* AddRecordOptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecordOptionView.h; sourceTree = "<group>"; };
 		C703FCF81CFBE15300C2B5C2 /* AddRecordOptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecordOptionView.m; sourceTree = "<group>"; };
+		C703FCFB1CFBF52600C2B5C2 /* MyCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewLayout.h; sourceTree = "<group>"; };
+		C703FCFC1CFBF52600C2B5C2 /* MyCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewLayout.m; sourceTree = "<group>"; };
+		C703FD011CFC231C00C2B5C2 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		C703FD021CFC231C00C2B5C2 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		C703FD031CFC231C00C2B5C2 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		C7280E511CFE929300109F78 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		C7280E521CFE929300109F78 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
+		C7280E571CFEC3B500109F78 /* AddRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecordVC.h; sourceTree = "<group>"; };
+		C7280E581CFEC3B500109F78 /* AddRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecordVC.m; sourceTree = "<group>"; };
+		C7280E5B1CFEC93C00109F78 /* AddRecordItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecordItemView.h; sourceTree = "<group>"; };
+		C7280E5C1CFEC93C00109F78 /* AddRecordItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecordItemView.m; sourceTree = "<group>"; };
+		C75EDEA81D012B7400210EF3 /* InsertContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertContentView.h; sourceTree = "<group>"; };
+		C75EDEA91D012B7400210EF3 /* InsertContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertContentView.m; sourceTree = "<group>"; };
 		C79522301CD2ECDE0054C780 /* TimeNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C79522341CD2ECDE0054C780 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C79522361CD2ECDE0054C780 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,9 +98,12 @@
 		C79522581CD2ECDF0054C780 /* TimeNoteUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimeNoteUITests.m; sourceTree = "<group>"; };
 		C795225A1CD2ECDF0054C780 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C79522661CD34CE00054C780 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C7ADBCF51CFFE6810042DC40 /* InsertItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InsertItemView.h; sourceTree = "<group>"; };
+		C7ADBCF61CFFE6810042DC40 /* InsertItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InsertItemView.m; sourceTree = "<group>"; };
 		C7B23CBD1CFBCA8D00601B1E /* ViewSource.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewSource.xib; sourceTree = "<group>"; };
 		C7B23CC01CFBCB3400601B1E /* AddRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRecordView.h; sourceTree = "<group>"; };
 		C7B23CC11CFBCB3400601B1E /* AddRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRecordView.m; sourceTree = "<group>"; };
+		C7CC37DB1CFD5DDA0041AAB8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E4D072E7BCABB2C9D1980679 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED6C952C6EB9F747754A1AA4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF4B16A06BD30C501AE42F49 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CC37DC1CFD5DDA0041AAB8 /* CoreLocation.framework in Frameworks */,
 				E1DFEC5A3A3758F6832FF102 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +148,7 @@
 		1FCFCD477CC67B4879A0CC49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C7CC37DB1CFD5DDA0041AAB8 /* CoreLocation.framework */,
 				ED6C952C6EB9F747754A1AA4 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -161,6 +188,38 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		C703FCFA1CFBF51600C2B5C2 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				C703FCFB1CFBF52600C2B5C2 /* MyCollectionViewLayout.h */,
+				C703FCFC1CFBF52600C2B5C2 /* MyCollectionViewLayout.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		C7280E561CFEC36E00109F78 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C7280E5A1CFEC92D00109F78 /* View */,
+				C7280E571CFEC3B500109F78 /* AddRecordVC.h */,
+				C7280E581CFEC3B500109F78 /* AddRecordVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C7280E5A1CFEC92D00109F78 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C7280E5B1CFEC93C00109F78 /* AddRecordItemView.h */,
+				C7280E5C1CFEC93C00109F78 /* AddRecordItemView.m */,
+				C7ADBCF51CFFE6810042DC40 /* InsertItemView.h */,
+				C7ADBCF61CFFE6810042DC40 /* InsertItemView.m */,
+				C75EDEA81D012B7400210EF3 /* InsertContentView.h */,
+				C75EDEA91D012B7400210EF3 /* InsertContentView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C79522271CD2ECDE0054C780 = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +245,8 @@
 		C79522321CD2ECDE0054C780 /* TimeNote */ = {
 			isa = PBXGroup;
 			children = (
+				C7280E561CFEC36E00109F78 /* Main */,
+				C703FCFA1CFBF51600C2B5C2 /* Test */,
 				C703FCED1CFBE00000C2B5C2 /* Extension */,
 				C703FCD71CFBDE8E00C2B5C2 /* Global */,
 				C7B23CBF1CFBCB1300601B1E /* Views */,
@@ -237,6 +298,11 @@
 				C7B23CC11CFBCB3400601B1E /* AddRecordView.m */,
 				C703FCF71CFBE15300C2B5C2 /* AddRecordOptionView.h */,
 				C703FCF81CFBE15300C2B5C2 /* AddRecordOptionView.m */,
+				C703FD011CFC231C00C2B5C2 /* CollectionViewCell.h */,
+				C703FD021CFC231C00C2B5C2 /* CollectionViewCell.m */,
+				C703FD031CFC231C00C2B5C2 /* CollectionViewCell.xib */,
+				C7280E511CFE929300109F78 /* MyCell.h */,
+				C7280E521CFE929300109F78 /* MyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -354,6 +420,7 @@
 				C79522431CD2ECDE0054C780 /* LaunchScreen.storyboard in Resources */,
 				C79522401CD2ECDE0054C780 /* Assets.xcassets in Resources */,
 				C795223E1CD2ECDE0054C780 /* Main.storyboard in Resources */,
+				C703FD051CFC231C00C2B5C2 /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +495,22 @@
 			files = (
 				C703FCF61CFBE00000C2B5C2 /* UIView+Extension.m in Sources */,
 				C703FCF51CFBE00000C2B5C2 /* UIImage+makePureColorImage.m in Sources */,
+				C7280E591CFEC3B500109F78 /* AddRecordVC.m in Sources */,
 				C795223B1CD2ECDE0054C780 /* ViewController.m in Sources */,
 				C703FCE11CFBDEEB00C2B5C2 /* UINavigationItem+CustomBackButtonItem.m in Sources */,
 				C7B23CC21CFBCB3400601B1E /* AddRecordView.m in Sources */,
 				C703FCF41CFBE00000C2B5C2 /* UIColor+Extension.m in Sources */,
 				C703FCF91CFBE15300C2B5C2 /* AddRecordOptionView.m in Sources */,
 				C79522381CD2ECDE0054C780 /* AppDelegate.m in Sources */,
+				C7280E5D1CFEC93C00109F78 /* AddRecordItemView.m in Sources */,
 				C703FCDF1CFBDEEB00C2B5C2 /* UIBarButtonItem+CustomBarButtonItem.m in Sources */,
+				C75EDEAA1D012B7400210EF3 /* InsertContentView.m in Sources */,
 				C703FCE01CFBDEEB00C2B5C2 /* UINavigationBar+CustomNavigationBar.m in Sources */,
+				C703FCFD1CFBF52600C2B5C2 /* MyCollectionViewLayout.m in Sources */,
 				C79522351CD2ECDE0054C780 /* main.m in Sources */,
+				C703FD041CFC231C00C2B5C2 /* CollectionViewCell.m in Sources */,
+				C7280E531CFE929300109F78 /* MyCell.m in Sources */,
+				C7ADBCF71CFFE6810042DC40 /* InsertItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

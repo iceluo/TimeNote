@@ -68,27 +68,13 @@
         }
     }];
     
-    [self mas_updateConstraints:^(MASConstraintMaker *make) {
-        
-        self.constraintHeight=make.height.mas_equalTo(self.arrayM.count*100).priorityMedium();
-//        self.constraintBottom = make.bottom.equalTo(bt);
-
-    }];
-
-}
-
-
--(void)removeConstraintByView:(UIView *)bt{
-    [self.constraintHeight uninstall];
     [self.constraintBottom uninstall];
     [self mas_updateConstraints:^(MASConstraintMaker *make) {
-      self.constraintHeight=  make.height.mas_equalTo(self.arrayM.count*100).priorityMedium().key(@"myke");
-      self.constraintBottom = make.bottom.equalTo(bt);
-    
+        self.constraintHeight=make.height.mas_equalTo(self.arrayM.count*100).priorityMedium();
+        self.constraintBottom= make.bottom.equalTo(bt);
     }];
-    
-}
 
+}
 
 
 -(UIButton *)getButton{
@@ -99,30 +85,16 @@
 }
 
 -(void)updateConstraints{
-    NSLog(@"updateConstraints %@",NSStringFromCGRect(self.frame));
-//    [self.constraintHeight uninstall];
+//    NSLog(@"updateConstraints %@",NSStringFromCGRect(self.frame));
+//    NSArray *installedConstraints = [MASViewConstraint installedConstraintsForView:self.lastView];
+//    for (MASConstraint *constraint in installedConstraints) {
+//        [constraint setValue:@50 forKey:@"layoutConstant"];
+//    }
+//    
+//    self.constraintHeight.mas_equalTo(self.arrayM.count*100);
 //    [self.constraintBottom uninstall];
-//    [self mas_remakeConstraints:^(MASConstraintMaker *make) {
-//        self.constraintHeight=  make.height.mas_equalTo(self.arrayM.count*100).priorityMedium();
-//        self.constraintBottom = make.bottom.equalTo(self.arrayM.lastObject);
-//        make.left.right.equalTo(@0);
-//        make.bottom.lessThanOrEqualTo(self.superview.mas_bottom).offset(-100);
-//        make.top.equalTo(@10);
-//    }];
-//
     
-
     
-    NSArray *installedConstraints = [MASViewConstraint installedConstraintsForView:self.lastView];
-    for (MASConstraint *constraint in installedConstraints) {
-//        [constraint uninstall];
-        
-//        constraint._layoutConstant
-        [constraint setValue:@50 forKey:@"layoutConstant"];
-        
-    }
-    
-    self.constraintHeight.mas_equalTo(self.arrayM.count*100);
     [super updateConstraints];
 }
 

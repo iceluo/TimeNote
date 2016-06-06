@@ -10,4 +10,5 @@
 
 @interface InsertItemView : UIControl
 
+-(void)show;
 @end

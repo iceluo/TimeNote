@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UITextField * textField;
 @property (nonatomic, strong) CAGradientLayer * gradientLayer;
 
+@property (nonatomic, strong) UIView * contentView;
 
 
 @property (nonatomic, strong) MASConstraint * leftConstraint;
@@ -59,7 +60,6 @@
 -(CAGradientLayer *)gradientLayer{
     if (_gradientLayer==nil) {
         _gradientLayer=[CAGradientLayer layer];
-        _gradientLayer.backgroundColor=[UIColor greenColor].CGColor;
         _gradientLayer.frame=self.bounds;
         _gradientLayer.colors=@[(__bridge id)[UIColor blackColor].CGColor,
                                 (__bridge id)[UIColor clearColor].CGColor
@@ -70,12 +70,21 @@
     }return _gradientLayer;
 }
 
+-(UIView *)contentView{
+    if (_contentView==nil) {
+        _contentView=[UIView new];
+        _contentView.frame=self.bounds;
+        [_contentView.layer addSublayer:self.gradientLayer];
+    }return _contentView;
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
         
         [self setUI];
+        self.alpha=0.f;
     }
     return self;
 }
@@ -87,15 +96,19 @@
     //    一个输入框
     [self addSubview:self.textField];
     //    两个按钮
-    [self addSubview:self.buttonForTime];
-    [self addSubview:self.buttonForAdd];
-    [self.layer addSublayer:self.gradientLayer];
+
+    
     
 //    两个按钮的位置
+    [self addSubview:self.buttonForAdd];
+    [self addSubview:self.buttonForTime];
+
+    [self performSelector:@selector(show) withObject:nil afterDelay:3];
     
 }
 
 -(void)layoutSubviews{
+    
     self.gradientLayer.frame=self.bounds;
 
     [super layoutSubviews];
@@ -126,6 +139,38 @@
             sender.tag=0;
         }
         [self layoutIfNeeded];
+    }];
+    
+}
+
+-(IBAction)buttonClick:(id)sender{
+
+    NSLog(@"buttonClick");
+    [self.leftConstraint uninstall];
+    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
+       self.leftConstraint= make.left.equalTo(self.mas_right);
+    }];
+    
+    [UIView animateWithDuration:0.45 animations:^{
+        [self layoutIfNeeded];
+    }];
+    
+}
+
+
+-(void)show{
+    
+    
+    
+    self.maskView=self.contentView;
+
+    self.alpha=1;
+    [UIView animateWithDuration:3.f animations:^{
+        CGRect frame=self.contentView.frame;
+        self.contentView.frame=CGRectOffset(frame, -frame.size.width, 0);
+
+    } completion:^(BOOL finished) {
+        self.maskView=nil;
     }];
     
 }

@@ -93,8 +93,6 @@
 //    
 //    self.constraintHeight.mas_equalTo(self.arrayM.count*100);
 //    [self.constraintBottom uninstall];
-    
-    
     [super updateConstraints];
 }
 

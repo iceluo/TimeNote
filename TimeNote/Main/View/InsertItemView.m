@@ -14,6 +14,9 @@
 @property (nonatomic, strong) UIButton * buttonForTime;
 @property (nonatomic, strong) UIButton * buttonForAdd;
 @property (nonatomic, strong) UITextField * textField;
+@property (nonatomic, strong) CAGradientLayer * gradientLayer;
+
+
 
 @property (nonatomic, strong) MASConstraint * leftConstraint;
 @property (nonatomic, strong) MASConstraint * rightConstraint;
@@ -53,6 +56,20 @@
 
 }
 
+-(CAGradientLayer *)gradientLayer{
+    if (_gradientLayer==nil) {
+        _gradientLayer=[CAGradientLayer layer];
+        _gradientLayer.backgroundColor=[UIColor greenColor].CGColor;
+        _gradientLayer.frame=self.bounds;
+        _gradientLayer.colors=@[(__bridge id)[UIColor blackColor].CGColor,
+                                (__bridge id)[UIColor clearColor].CGColor
+                                ];
+        _gradientLayer.locations=@[@(0),@(1)];
+        _gradientLayer.startPoint=CGPointMake(0, 0);
+        _gradientLayer.endPoint=CGPointMake(1, 0);
+    }return _gradientLayer;
+}
+
 - (instancetype)init
 {
     self = [super init];
@@ -72,47 +89,31 @@
     //    两个按钮
     [self addSubview:self.buttonForTime];
     [self addSubview:self.buttonForAdd];
+    [self.layer addSublayer:self.gradientLayer];
+    
 //    两个按钮的位置
-
-    
-    [self.buttonForTime mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.equalTo(self);
-        make.width.equalTo(self.mas_height);
-    }];
-    
-    [self.buttonForAdd mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(@0);
-        make.width.equalTo(self.mas_height);
-        self.leftConstraint=make.left.equalTo(@0);
-        self.rightConstraint=make.right.equalTo(@0);
-    }];
-    [self.rightConstraint uninstall];
-    
-    //
-    [self.textField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.bottom.equalTo(@0);
-        make.right.equalTo(self.buttonForAdd.mas_left);
-    }];
     
 }
-
 
 -(void)layoutSubviews{
-    
-//    NSLog(@"%@ is layoutSubviews frame is %@",[self class],NSStringFromCGRect(self.frame));
-    [self.textField mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(self.frame.size.width-self.frame.size.height*2);
-    }];
-    
+    self.gradientLayer.frame=self.bounds;
+
+    [super layoutSubviews];
+
 }
 
+
+-(void)updateConstraints{
+    [super updateConstraints];
+}
 
 -(IBAction)buttonForAddClick:(UIControl*)sender{
    
     [UIView animateWithDuration:0.35 animations:^{
         if (sender.tag==0) {
-            [self.leftConstraint install];
             [self.rightConstraint uninstall];
+            [self.leftConstraint install];
+
             self.buttonForTime.alpha=0.f;
             [self.buttonForAdd setTitle:@"➕" forState:UIControlStateNormal];
             sender.tag=1;

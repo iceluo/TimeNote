@@ -27,4 +27,21 @@
         return nil;
     }
 }
+
+-(void)removeConstraintByType:(NSLayoutAttribute )type{
+    
+    NSArray *installedConstraints = [MASViewConstraint installedConstraintsForView:self];
+    for (MASViewConstraint *constraint in installedConstraints) {
+        //        [constraint uninstall];
+        id obj=[constraint valueForKeyPath:@"firstViewAttribute.layoutAttribute"];
+        NSLayoutAttribute attribute=[obj integerValue];
+        if (attribute==type) {
+            [constraint uninstall];
+            break;
+        }
+        
+    }
+}
+
+
 @end

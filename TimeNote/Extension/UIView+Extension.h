@@ -12,5 +12,5 @@
 
 
 +(instancetype)viewFromXib;
-
+-(void)removeConstraintByType:(NSLayoutAttribute )type;
 @end

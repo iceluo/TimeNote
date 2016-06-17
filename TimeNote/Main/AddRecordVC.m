@@ -27,16 +27,15 @@
     [self setUI];
     
 }
-
-
--(void)setUI{
+- (void)setUI{
     
     InsertItemView *view=[InsertItemView new];
     [self.view addSubview:view];
     [view mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(@0);
+        make.left.equalTo(@10);
+        make.right.equalTo(@-10);
         make.top.equalTo(@100);
-        make.height.equalTo(@44);
+        make.height.equalTo(@60);
     }];
     
     [view addTarget:self action:@selector(move:) forControlEvents:UIControlEventTouchUpInside];
@@ -44,16 +43,12 @@
     [self.view addSubview:contentView];
     contentView.backgroundColor=[UIColor colorWithHexString:@"dddddd"];
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(view.mas_bottom);
+        make.top.equalTo(view.mas_bottom).offset(10);
         make.left.right.equalTo(@0);
         make.bottom.lessThanOrEqualTo(self.view).offset(-100);
 //        make.height.equalTo(@140);
     }];
 }
-
-
-
-
 #pragma mark - 界面
 #pragma mark - getters and setters
 #pragma mark - 系统delegate
@@ -82,5 +77,4 @@
    
     
 }
-
 @end

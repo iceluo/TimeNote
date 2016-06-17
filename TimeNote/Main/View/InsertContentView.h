@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InsertItemView.h"
 
 @interface InsertContentView : UIScrollView
 

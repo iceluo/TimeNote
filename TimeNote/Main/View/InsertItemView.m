@@ -8,6 +8,24 @@
 
 #import "InsertItemView.h"
 
+@interface TimeButton : UIButton
+
+@end
+@implementation TimeButton
+
+
+
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    self.layer.cornerRadius=self.frame.size.width/2.f;
+    
+}
+
+
+
+@end
+
+
 @interface InsertItemView ()
 
 
@@ -29,42 +47,22 @@
 
 @implementation InsertItemView
 
--(UIButton *)buttonForTime{
-    if (!_buttonForTime) {
-        _buttonForTime=[UIButton new];
-        _buttonForTime.backgroundColor=[UIColor getRandomColor];
-        [_buttonForTime setTitle:@"9:00" forState:UIControlStateNormal];
-        _buttonForTime.alpha=0.0;
-    }return _buttonForTime;
-}
-
--(UIButton *)buttonForAdd{
-    if (!_buttonForAdd) {
-        _buttonForAdd=[UIButton new];
-        _buttonForAdd.backgroundColor=[UIColor redColor];
-        [_buttonForAdd setTitle:@"➕" forState:UIControlStateNormal];
-        [_buttonForAdd addTarget:self action:@selector(buttonForAddClick:) forControlEvents:UIControlEventTouchUpInside];
-    }return _buttonForAdd;
-}
-
-
 -(UITextField *)textField{
     if (!_textField) {
         _textField=[UITextField new];
         _textField.backgroundColor=[UIColor grayColor];
-
     }return _textField;
-
 }
 
 -(CAGradientLayer *)gradientLayer{
     if (_gradientLayer==nil) {
         _gradientLayer=[CAGradientLayer layer];
-        _gradientLayer.frame=self.bounds;
         _gradientLayer.colors=@[(__bridge id)[UIColor blackColor].CGColor,
+                                (__bridge id)[UIColor blackColor].CGColor,
+                                (__bridge id)[UIColor clearColor].CGColor,
                                 (__bridge id)[UIColor clearColor].CGColor
                                 ];
-        _gradientLayer.locations=@[@(0),@(1)];
+        _gradientLayer.locations=@[@(0),@(0.33333333),@(0.666667),@(1)];
         _gradientLayer.startPoint=CGPointMake(0, 0);
         _gradientLayer.endPoint=CGPointMake(1, 0);
     }return _gradientLayer;
@@ -73,18 +71,15 @@
 -(UIView *)contentView{
     if (_contentView==nil) {
         _contentView=[UIView new];
-        _contentView.frame=self.bounds;
+        _contentView.backgroundColor=[UIColor clearColor];
         [_contentView.layer addSublayer:self.gradientLayer];
     }return _contentView;
 }
 
-- (instancetype)init
-{
+- (instancetype)init{
     self = [super init];
     if (self) {
-        
         [self setUI];
-        self.alpha=0.f;
     }
     return self;
 }
@@ -92,87 +87,70 @@
 - (void)setUI{
     
     self.backgroundColor=[UIColor orangeColor];
-    
     //    一个输入框
     [self addSubview:self.textField];
-    //    两个按钮
 
+    UIButton *leftBT=[self getButton];
+    self.leftBT=leftBT;
+    [self addSubview:leftBT];
+    [leftBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(@0);
+        make.top.equalTo(@0);
+        make.width.equalTo(self.mas_height);
+        make.height.equalTo(self.mas_height);
+    }];
     
-    
-//    两个按钮的位置
-    [self addSubview:self.buttonForAdd];
-    [self addSubview:self.buttonForTime];
+    UIButton *rightBT=[self getButton];
+    self.rightBT=rightBT;
+    [self addSubview:rightBT];
+    [rightBT mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(@0);
+        make.top.equalTo(@0);
+        make.width.equalTo(self.mas_height);
+        make.height.equalTo(self.mas_height);
+    }];
 
-    [self performSelector:@selector(show) withObject:nil afterDelay:3];
+    UITextField *textField=[UITextField new];
+    [self addSubview:textField];
+    [textField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(leftBT.mas_right);
+        make.right.equalTo(rightBT.mas_left);
+        make.top.bottom.equalTo(@0);
+    }];
     
+}
+
+-(UIButton *)getButton{
+    TimeButton *button=[TimeButton new];
+    button.backgroundColor=[UIColor getRandomColor];
+    return button;
+}
+
+-(void)drawRect:(CGRect)rect{
+    [super drawRect:rect];
+    [self show];
 }
 
 -(void)layoutSubviews{
-    
-    self.gradientLayer.frame=self.bounds;
-
     [super layoutSubviews];
-
+    self.layer.cornerRadius=self.frame.size.height/2.f;
+    self.layer.masksToBounds=YES;
 }
-
-
--(void)updateConstraints{
-    [super updateConstraints];
-}
-
--(IBAction)buttonForAddClick:(UIControl*)sender{
-   
-    [UIView animateWithDuration:0.35 animations:^{
-        if (sender.tag==0) {
-            [self.rightConstraint uninstall];
-            [self.leftConstraint install];
-
-            self.buttonForTime.alpha=0.f;
-            [self.buttonForAdd setTitle:@"➕" forState:UIControlStateNormal];
-            sender.tag=1;
-        }else{
-            [self.leftConstraint uninstall];
-            [self.rightConstraint install];
-            self.buttonForTime.alpha=1;
-            [self.buttonForAdd setTitle:@"➖" forState:UIControlStateNormal];
-
-            sender.tag=0;
-        }
-        [self layoutIfNeeded];
-    }];
-    
-}
-
--(IBAction)buttonClick:(id)sender{
-
-    NSLog(@"buttonClick");
-    [self.leftConstraint uninstall];
-    [self.contentView mas_updateConstraints:^(MASConstraintMaker *make) {
-       self.leftConstraint= make.left.equalTo(self.mas_right);
-    }];
-    
-    [UIView animateWithDuration:0.45 animations:^{
-        [self layoutIfNeeded];
-    }];
-    
-}
-
-
 -(void)show{
-    
-    
-    
+
     self.maskView=self.contentView;
-
-    self.alpha=1;
-    [UIView animateWithDuration:3.f animations:^{
+    self.contentView.frame=CGRectMake(-self.bounds.size.width*2, 0, self.bounds.size.width*3, self.bounds.size.height);
+    self.gradientLayer.frame=self.contentView.bounds;
+    
+    [UIView animateWithDuration:2.f animations:^{
         CGRect frame=self.contentView.frame;
-        self.contentView.frame=CGRectOffset(frame, -frame.size.width, 0);
-
+        self.contentView.frame=CGRectOffset(frame,2*self.frame.size.width, 0);
     } completion:^(BOOL finished) {
         self.maskView=nil;
     }];
-    
 }
+
+
+
 
 @end

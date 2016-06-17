@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InsertItemView : UIControl
+@property (nonatomic ,strong)UIControl *leftBT;
+@property (nonatomic ,strong)UIControl *rightBT;
 
 -(void)show;
 @end
